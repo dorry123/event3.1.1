@@ -1,5 +1,5 @@
 {
-  "name": "ionic-conference-app",
+  "name": "ionic-event-app",
   "type": "angular",
   "integrations": {
     "cordova": {}

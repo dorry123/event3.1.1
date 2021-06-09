@@ -2,10 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { URL } from '../constants';
-//import { Appello } from '../model/appello.model';
 import { Evento } from '../model/evento.model';
 import {Observable} from 'rxjs';
-
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +14,7 @@ export class EventoService {
 
     listEventi(): Observable<Evento[]> {
         return this.http.get<Evento[]>(URL.ALL_EVENTI);
+        console.log(URL.ALL_EVENTI);
     }
 /* 
     listAppelli(idInsegnamento): Observable<Appello[]> {

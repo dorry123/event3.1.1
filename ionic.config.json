@@ -1,7 +1,15 @@
+
 {
-  "name": "ionic-event-app",
-  "type": "angular",
+  "name": "Eventapp",
   "integrations": {
     "cordova": {}
+  },
+  "type": "angular",
+  "serve": {
+    "builder": "@angular-dev-kit/build-angular:dev-server",
+    "options": {
+      "browserTarget": "app:build",
+      "proxyConfig": "proxy.conf.json"
+    }
   }
 }

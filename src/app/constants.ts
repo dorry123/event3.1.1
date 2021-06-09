@@ -1,6 +1,6 @@
 export const USE_PROXY = true;
 
-export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/api/api';
+export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/eventapp/api/';
 
 //'http://localhost:8080/eventapp/api';
 
@@ -20,7 +20,7 @@ export const URL = {
     FIND_NOTA_BYIDUSER: URL_BASE + '/note/user/',           //+UserID
     DELETE_NOTA: URL_BASE + '/note/delete/user/',           //+UserID
 
-
+    //http://localhost:8000/evento/all
     ALL_EVENTI: URL_BASE + '/evento/all',
     ADD_EVENTO: URL_BASE + '/evento/add',
     GET_EVENTO_BYID: URL_BASE + '/evento/',                         //+EventoID
@@ -28,7 +28,7 @@ export const URL = {
     FIND_EVENTO_BYID: URL_BASE + '/evento/',                        //+EventoID
 
     ALL_NEWS: URL_BASE + '/news/all',
-    ADD_NEWS: URL_BASE + 'http://localhost:8000/note/addnote',
+    ADD_NEWS: URL_BASE + '/news/add',
     GET_NEWS_BYUSERID: URL_BASE + '/news/user/',                         //+UserID
     UPDATE_NEWS: URL_BASE + '/news/update/',                            //+NewsID
     FIND_NEWS_BYID: URL_BASE + '/news/'                                  //+NewsID

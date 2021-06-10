@@ -9,10 +9,23 @@ import {Evento} from '../../model/evento.model';
   templateUrl: 'event-list.html',
   styleUrls: ['./event-list.scss'],
 })
+
+
+// export class EventListPage {
+//   evento: any[] = [];
+
+//   constructor(public eventData: EventData) {}
+
+//   ionViewDidEnter() {
+//     this.eventData.getEvents().subscribe((evento: any[]) => {
+//       this.evento = evento;
+//     });
+//   }
+// }
+
+
 export class EventListPage implements OnInit {
-
   private eventi$: Observable<Evento[]>;
-
   constructor(private eventoService: EventoService) {}
 
     ngOnInit() {
@@ -23,11 +36,12 @@ export class EventListPage implements OnInit {
     // DO nothing
   }
 
+
+
 /*    ionViewDidEnter() {
     this.eventData.getEvents().subscribe((evento: any[]) => {
       this.evento = evento;
     });
   }  */
-
 
 }

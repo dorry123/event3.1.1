@@ -20,8 +20,7 @@ export const URL = {
     FIND_NOTA_BYIDUSER: URL_BASE + '/note/user/',           //+UserID
     DELETE_NOTA: URL_BASE + '/note/delete/user/',           //+UserID
 
-    //http://localhost:8000/evento/all
-    ALL_EVENTI: URL_BASE + '/evento/all',
+    ALL_EVENTI: 'http://localhost:8080/evento/all',
     ADD_EVENTO: URL_BASE + '/evento/add',
     GET_EVENTO_BYID: URL_BASE + '/evento/',                         //+EventoID
     UPDATE_EVENTO: URL_BASE + '/evento/update/',                    //+EventoID
@@ -33,6 +32,9 @@ export const URL = {
     UPDATE_NEWS: URL_BASE + '/news/update/',                            //+NewsID
     FIND_NEWS_BYID: URL_BASE + '/news/'                                  //+NewsID
 };
+
+    //http://localhost:8080/evento/all
+    //ALL_EVENTI: URL_BASE + '/evento/all',
 
 export const X_AUTH = 'X-Auth';
 export const AUTH_TOKEN = 'auth-token';

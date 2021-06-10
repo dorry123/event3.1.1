@@ -4,6 +4,9 @@ import { TabsPage } from './tabs-page';
 import { SchedulePage } from '../schedule/schedule';
 import { NewsPage } from '../news/news';
 
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {IonicModule} from '@ionic/angular';
 
 const routes: Routes = [
   {
@@ -22,7 +25,7 @@ const routes: Routes = [
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           }
         ]
-      },
+      }, 
       {
         path: 'events',
         children: [

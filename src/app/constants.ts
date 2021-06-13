@@ -5,32 +5,36 @@ export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/eventapp/api/
 //'http://localhost:8080/eventapp/api';
 
 export const URL = {
-    LOGIN: URL_BASE + '/user/loginUser/request',
+    //User
+    LOGIN: URL_BASE + 'http://localhost:8080/user/loginUser/request',
     LOGOUT: URL_BASE + '/logout',
-    UPDATE_PROFILO: URL_BASE + '/user/update',
-    INSERT_USER: URL_BASE + '/user/saveUser',
-    GET_DATA_USER: URL_BASE + '/user/getData',
-    GET_USER_BYID: URL_BASE + '/user',
-    GET_USERS: URL_BASE + '/user/all',
+    GET_USERS: 'http://localhost:8080/user/all',
+    UPDATE_PROFILO: 'http://localhost:8080/user/update/{IdUser}',
+    INSERT_USER: 'http://localhost:8080/user/saveUser',
+    GET_DATA_USER: 'http://localhost:8080/user/getData',
+    GET_USER_BYID: 'http://localhost:8080/user/{idUser}',
 
-    ADD_NOTA: URL_BASE + '/note/addnota',
-    ALL_NOTE: URL_BASE + '/note/all',
-    GET_NOTA_BYID: URL_BASE + '/note/',                     //+NoteID
-    UPDATE_NOTA: URL_BASE + '/note/update/',                //+NoteID
+    //Note - Recensione
+    ADD_NOTA: URL_BASE + 'http://note/addnota',
+    ALL_NOTE: 'http://localhost:8080/note/all',
+    GET_NOTA_BYID: 'http://localhost:8080/note/{IdNota}',                     //+NoteID
+    UPDATE_NOTA: 'http://localhost:8080/note/update/{IdNota}',                //+NoteID
     FIND_NOTA_BYIDUSER: URL_BASE + '/note/user/',           //+UserID
-    DELETE_NOTA: URL_BASE + '/note/delete/user/',           //+UserID
+    DELETE_NOTA: 'http://localhost:8080/note/delete/Id',           //+UserID
 
+    //Evento
     ALL_EVENTI: 'http://localhost:8080/evento/all',
-    ADD_EVENTO: URL_BASE + '/evento/add',
-    GET_EVENTO_BYID: URL_BASE + '/evento/',                         //+EventoID
-    UPDATE_EVENTO: URL_BASE + '/evento/update/',                    //+EventoID
-    FIND_EVENTO_BYID: URL_BASE + '/evento/',                        //+EventoID
+    ADD_EVENTO: 'http://localhost:8080/evento/add',
+    FIND_EVENTO_BYID:  'http://localhost:8080/evento/{id}',              //+EventoID verificare
+    UPDATE_EVENTO: 'http://localhost:8080/evento/update/{id}',       //+EventoID
+    DELETE_EVENTO: 'http://localhost:8080/evento/delete/{id}',           //+EventoID verificare
 
-    ALL_NEWS: URL_BASE + '/news/all',
-    ADD_NEWS: URL_BASE + '/news/add',
+    //News
+    ALL_NEWS: 'http://localhost:8080/note/all',
+    ADD_NEWS: 'http://localhost:8080/note/addnota',
     GET_NEWS_BYUSERID: URL_BASE + '/news/user/',                         //+UserID
-    UPDATE_NEWS: URL_BASE + '/news/update/',                            //+NewsID
-    FIND_NEWS_BYID: URL_BASE + '/news/'                                  //+NewsID
+    UPDATE_NEWS: 'http://localhost:8080/note/update/{IdNota}',                            //+NewsID
+    FIND_NEWS_BYID: 'http://localhost:8080/note/{IdNota}'                                  //+NewsID
 };
 
     //http://localhost:8080/evento/all

@@ -16,6 +16,26 @@ export class EventoService {
         return this.http.get<Evento[]>(URL.ALL_EVENTI);
         console.log(URL.ALL_EVENTI);
     }
+
+    findEventoById(idEvento: number): Observable<Evento> {
+        const eventoUrl = `${URL.FIND_EVENTO_BYID}/${idEvento}`;
+        return this.http.get<Evento>(eventoUrl);
+    }
+
+
+    createEvento(evento: Evento) {
+        return this.http.post<Evento>(URL.ADD_EVENTO, evento);
+    }
+
+    updateEvento(evento: Evento) {
+        return this.http.put<Evento>(URL.UPDATE_EVENTO, evento);
+    }
+
+    deleteEvento(evento: Evento) {
+        const deleteUrl = `${URL.DELETE_EVENTO}/${evento.id}`;
+        return this.http.delete<Evento>(deleteUrl);
+    }
+
 /* 
     listAppelli(idInsegnamento): Observable<Appello[]> {
         const appelliUrl = `${URL.INSEGNAMENTI}/${idInsegnamento}/appelli`;

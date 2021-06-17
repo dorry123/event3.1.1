@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { URL } from '../constants';
-import { News } from '../model/news.module';
+import { News } from '../model/news.model';
 import {Observable} from 'rxjs';
 
 @Injectable({

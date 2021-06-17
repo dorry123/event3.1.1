@@ -12,10 +12,15 @@ export interface Account {
     password: string;
 }
 
+
+//codice prof Utente
 @Injectable({
     providedIn: 'root'
 })
 export class UtenteService {
+    u: any;
+    p: any;
+    res: string;
     private authToken: string;
     private loggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     private utente$: BehaviorSubject<Utente> = new BehaviorSubject<Utente>({} as Utente);
@@ -86,4 +91,27 @@ export class UtenteService {
             }));
     } 
 
+    //codice da Piero
+      gettoken( p, s): any{
+            const user = p;
+            const pass = s;
+            // tslint:disable-next-line:prefer-const
+
+            this.http.post('http://localhost:8080/user/loginUser', {
+            username: user,
+            password: pass
+            }).subscribe (response => this.res = JSON.stringify(response), error1 => this.res = JSON.stringify(error1));
+            return this.res; }
+
+      registration( mail, pass, nome): any{
+            this.http.post('http://localhost:8080/user/saveUser',
+                {
+            username: nome,
+            password: pass,
+            email : mail,
+            roles: ['Admin', 'Manager']}
+                ).subscribe(result => this.res = JSON.stringify(result));
+            return console.log(this.res);
+            }
+            
 }

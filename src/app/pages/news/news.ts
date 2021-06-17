@@ -1,19 +1,34 @@
-import { Component } from '@angular/core';
-import { EventData } from '../../providers/event-data';
+import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+//import { EventData } from '../../providers/event-data';
+import {NewsService} from '../../services/news.service';
+import {News} from '../../model/news.model';
 
 @Component({
   selector: 'page-news',
   templateUrl: 'news.html',
   styleUrls: ['./news.scss'],
 })
-export class NewsPage {
+export class NewsPage implements OnInit{
   news: any[] = [];
+  private news$: Observable<News[]>;
 
-  constructor(public eventData: EventData) {}
+  constructor(private newsService: NewsService) {}
 
-  ionViewDidEnter() {
-    this.eventData.getNews().subscribe((news: any[]) => {
-      this.news = news;
-    });
+      ngOnInit() {
+    this.news$ = this.newsService.listNews();
   }
+
+    openDettaglioNews(n: News) {
+    // DO nothing
+  }
+
+  // ionViewDidEnter() {
+  //   this.eventData.getNews().subscribe((news: any[]) => {
+  //     this.news = news;
+  //   });
+  // }
+
+
+
 }

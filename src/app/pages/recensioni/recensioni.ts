@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
+import {Observable} from 'rxjs';
+//import { EventData } from '../../providers/event-data';
+import {RecensioniService} from '../../services/recensioni.service';
+import {Recensione} from '../../model/recensione.model';
 
 import { AlertController, ToastController } from '@ionic/angular';
 
@@ -8,14 +13,24 @@ import { AlertController, ToastController } from '@ionic/angular';
   templateUrl: 'recensioni.html',
   styleUrls: ['./recensioni.scss'],
 })
-export class RecensioniPage {
+export class RecensioniPage implements OnInit {
+  private recensioni$: Observable<Recensione[]>;
   submitted = false;
   supportMessage: string;
 
   constructor(
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private recensioniService: RecensioniService
   ) { }
+
+    ngOnInit() {
+    this.recensioni$ = this.recensioniService.listRecensioni();
+  }
+
+    openDettaglioRecensioni(r: Recensione) {
+    // DO nothing
+  }
 
   async ionViewDidEnter() {
     const toast = await this.toastCtrl.create({
@@ -40,6 +55,14 @@ export class RecensioniPage {
     }
   }
 
+/*    ionViewDidEnter() {
+    this.eventData.getEvents().subscribe((evento: any[]) => {
+      this.evento = evento;
+    });
+  }  */
+
+}
+
 
   
   // If the user enters text in the support question and then navigates
@@ -63,4 +86,5 @@ export class RecensioniPage {
   //     await alert.present();
   //   });
   // }
-}
+  
+

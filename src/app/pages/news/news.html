@@ -16,17 +16,18 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let news of news">
+      <ion-col size="12" size-md="6" *ngFor="let news of news$ | async">
         <ion-card class="event-card" >
           <ion-card-header>
             <ion-item detail="false" lines="none" class="event-item" routerLink="/app/tabs/news/news/{{news.idMsg}}">
               <ion-avatar slot="start">
               </ion-avatar>
               <ion-label>
-                <h2>{{news.tipoMsg==1 ? "Info" : news.tipoMsg==2 ? "Alert" : "Promo"}}</h2>
-                <h2>{{news.nomeMsg}}</h2>
-                <p>{{news.msg}}</p>
-                <p>{{news.dataOra}}</p>
+                <h2>{{news.tipo_news==1 ? "Promo" : news.tipo_news==2 ? "Info" :  news.tipo_news==3 ? "Alert" : "Generico"}}</h2>
+                <h2>{{news.nome_msg}}</h2>
+                <p>{{news.attivo}}</p>
+                <p>{{news.tipo_news}}</p>
+                {{news.messaggio}}
               </ion-label>
             </ion-item>
           </ion-card-header>

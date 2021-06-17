@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import { EventData } from '../../providers/event-data';
+//import { EventData } from '../../providers/event-data';
 import {EventoService} from '../../services/evento.service';
 import {Evento} from '../../model/evento.model';
 
@@ -22,7 +22,6 @@ import {Evento} from '../../model/evento.model';
 //     });
 //   }
 // }
-
 
 export class EventListPage implements OnInit {
   private eventi$: Observable<Evento[]>;

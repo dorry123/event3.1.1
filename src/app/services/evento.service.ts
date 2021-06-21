@@ -9,11 +9,11 @@ import { URL } from '../constants';
 })
 export class EventoService {
 
-    public events: Evento[] = [];
-    public evento: Evento;
-    public loaded = false;
+    //public events: Evento[] = [];
+    //public evento: Evento;
+    //public loaded = false;
 
-    constructor(private http: HttpClient, private storage: Storage) {
+    constructor(private http: HttpClient) {
     }
     private res: any;
     listEventi(): Observable<Evento[]> {

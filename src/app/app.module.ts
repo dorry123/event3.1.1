@@ -12,11 +12,6 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
-//import {ModalPageModule} from './modal-notifiche/modal.module';
-//import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
-
-// import { Geolocation } from '@ionic-native/geolocation/ngx';
-// import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   imports: [

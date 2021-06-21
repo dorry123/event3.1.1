@@ -26,7 +26,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    //ModalPageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
@@ -35,11 +34,7 @@ import { FormsModule } from '@angular/forms';
   providers: [
     InAppBrowser, 
     SplashScreen, 
-    StatusBar, 
-   // LocalNotifications,
-   // Geolocation,
-   // NativeGeocoder,
-   // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    StatusBar
     ],
   bootstrap: [AppComponent]
 })

@@ -12,6 +12,11 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+//import {ModalPageModule} from './modal-notifiche/modal.module';
+//import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+
+// import { Geolocation } from '@ionic-native/geolocation/ngx';
+// import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   imports: [
@@ -21,12 +26,21 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
+    //ModalPageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [
+    InAppBrowser, 
+    SplashScreen, 
+    StatusBar, 
+   // LocalNotifications,
+   // Geolocation,
+   // NativeGeocoder,
+   // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

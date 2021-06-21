@@ -1,17 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-import { URL } from '../constants';
 import { Evento } from '../model/evento.model';
 import {Observable} from 'rxjs';
+import { URL } from '../constants';
 
 @Injectable({
     providedIn: 'root'
 })
 export class EventoService {
-    constructor(private http: HttpClient) {
-    }
 
+    public events: Evento[] = [];
+    public evento: Evento;
+    public loaded = false;
+
+    constructor(private http: HttpClient, private storage: Storage) {
+    }
+    private res: any;
     listEventi(): Observable<Evento[]> {
         return this.http.get<Evento[]>(URL.ALL_EVENTI);
         console.log(URL.ALL_EVENTI);
@@ -35,27 +39,29 @@ export class EventoService {
         return this.http.delete<Evento>(deleteUrl);
     }
 
-/* 
-    listAppelli(idInsegnamento): Observable<Appello[]> {
-        const appelliUrl = `${URL.INSEGNAMENTI}/${idInsegnamento}/appelli`;
-        return this.http.get<Appello[]>(appelliUrl);
-    } */
-/* 
-    createAppello(appello: Appello) {
-        return this.http.post<Appello>(URL.APPELLI, appello);
-    }
+/*   load(): Promise<boolean> {
 
-    findAppelloById(idAppello: number): Observable<Appello> {
-        const appelloUrl = `${URL.APPELLI}/${idAppello}`;
-        return this.http.get<Appello>(appelloUrl);
-    }
+    // Return a promise so that we know when this operation has completed
+    return new Promise((resolve) => {
+      // Get the notes that were saved into storage
+  this.http.get<Evento[]>(URL.ALL_EVENTI).subscribe(response => console.log(response));
+  this.listEventi().subscribe(result => console.log(result));
+  this.storage.get('events').then((events) => console.log(events));
+  this.listEventi().subscribe(result => {
 
-    updateAppello(appello: Appello) {
-        return this.http.put<Appello>(URL.APPELLI, appello);
-    }
+        // Only set this.notes to the returned value if there were values stored
+        if (result != null){
+          this.events = result;
+        }
+        // this.getAllNote().subscribe(result => this.notes  = result) ;
+        // This allows us to check if the data has been loaded in or not
+        this.loaded = true;
+        resolve(true);
+      });
+    });
+  } */
+// ---------fine metodo
 
-    deleteAppello(appello: Appello) {
-        const deleteUrl = `${URL.APPELLI}/${appello.id}`;
-        return this.http.delete<Appello>(deleteUrl);
-    } */
+
+
 }

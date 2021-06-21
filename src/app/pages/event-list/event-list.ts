@@ -1,27 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-//import { EventData } from '../../providers/event-data';
 import {EventoService} from '../../services/evento.service';
 import {Evento} from '../../model/evento.model';
+import {tap} from 'rxjs/internal/operators/tap';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'page-event-list',
   templateUrl: 'event-list.html',
   styleUrls: ['./event-list.scss'],
 })
-
-
-// export class EventListPage {
-//   evento: any[] = [];
-
-//   constructor(public eventData: EventData) {}
-
-//   ionViewDidEnter() {
-//     this.eventData.getEvents().subscribe((evento: any[]) => {
-//       this.evento = evento;
-//     });
-//   }
-// }
 
 export class EventListPage implements OnInit {
   private eventi$: Observable<Evento[]>;
@@ -31,16 +19,16 @@ export class EventListPage implements OnInit {
     this.eventi$ = this.eventoService.listEventi();
   }
 
-    openDettaglioEvento(e: Evento) {
+  doRefresh(event) {
+    this.eventi$ = this.eventoService.listEventi()
+        .pipe(tap(() => {
+          event.target.complete();
+        }));
+  }
+
+      openDettaglioEvento(e: Evento) {
     // DO nothing
   }
 
-
-
-/*    ionViewDidEnter() {
-    this.eventData.getEvents().subscribe((evento: any[]) => {
-      this.evento = evento;
-    });
-  }  */
 
 }

@@ -1,106 +1,27 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { EventData } from '../../providers/event-data';
-import { ActionSheetController } from '@ionic/angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import { EventoService } from '../../services/evento.service';
+import { Evento } from '../../model/evento.model';
+//import { URL } from '../constants';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'page-event-detail',
   templateUrl: 'event-detail.html',
   styleUrls: ['./event-detail.scss'],
 })
-export class EventDetailPage {
-  event: any;
 
-  constructor(
-    private dataProvider: EventData,
-    private route: ActivatedRoute,
-    public actionSheetCtrl: ActionSheetController,
-    public eventData: EventData,
-    public inAppBrowser: InAppBrowser,
-  ) {}
+export class EventDetailPage implements OnInit{
+  private evento$: Observable<Evento>;
 
-  ionViewWillEnter() {
-    this.dataProvider.load().subscribe((data: any) => {
-      const idEvento = this.route.snapshot.paramMap.get('idEvento');
-      if (data && data.events) {
-        for (const event of data.events) {
-          if (event && event.id === idEvento) {
-            this.event = event;
-            break;
-          }
-        }
-      }
+  constructor(private route: ActivatedRoute,
+              private eventoService: EventoService) { }
+
+  ngOnInit() {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.evento$ = this.eventoService.findEventoById(parseInt(params.get('id'), 0));
     });
   }
 
-  openExternalUrl(url: string) {
-    this.inAppBrowser.create(
-      url,
-      '_blank'
-    );
-  }
-
-  async openEventShare(event: any) {
-    const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Share ' + event.name,
-      buttons: [
-        {
-          text: 'Copy Link',
-          handler: () => {
-            console.log(
-              'Copy link clicked on https://twitter.com/' + event.twitter
-            );
-            if (
-              (window as any).cordova &&
-              (window as any).cordova.plugins.clipboard
-            ) {
-              (window as any).cordova.plugins.clipboard.copy(
-                'https://twitter.com/' + event.twitter
-              );
-            }
-          }
-        },
-        {
-          text: 'Share via ...'
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
-    });
-
-    await actionSheet.present();
-  }
-
-  async openContact(event: any) {
-    const mode = 'ios'; // this.config.get('mode');
-
-    const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Contact ' + event.name,
-      buttons: [
-        {
-          text: `Email ( ${event.email} )`,
-          icon: mode !== 'ios' ? 'mail' : null,
-          handler: () => {
-            window.open('mailto:' + event.email);
-          }
-        },
-        {
-          text: `Call ( ${event.phone} )`,
-          icon: mode !== 'ios' ? 'call' : null,
-          handler: () => {
-            window.open('tel:' + event.phone);
-          }
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
-    });
-
-    await actionSheet.present();
-  }
 }

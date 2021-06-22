@@ -32,7 +32,12 @@ const routes: Routes = [
   {
     path: 'recensioni',
     loadChildren: () => import('./pages/recensioni/recensioni.module').then(m => m.RecensioniModule)
+  },
+  {
+      path: 'evento/:id',
+      loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
   }
+
 /*   {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)

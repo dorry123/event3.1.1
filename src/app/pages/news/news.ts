@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-//import { EventData } from '../../providers/event-data';
 import {NewsService} from '../../services/news.service';
 import {News} from '../../model/news.model';
 
@@ -19,16 +18,11 @@ export class NewsPage implements OnInit{
     this.news$ = this.newsService.listNews();
   }
 
-    openDettaglioNews(n: News) {
-    // DO nothing
-  }
-
   // ionViewDidEnter() {
   //   this.eventData.getNews().subscribe((news: any[]) => {
   //     this.news = news;
   //   });
   // }
-
 
 
 }

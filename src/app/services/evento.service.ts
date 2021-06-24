@@ -9,10 +9,6 @@ import { URL } from '../constants';
 })
 export class EventoService {
 
-    //public events: Evento[] = [];
-    //public evento: Evento;
-    //public loaded = false;
-
     constructor(private http: HttpClient) {
     }
     private res: any;
@@ -38,29 +34,6 @@ export class EventoService {
         const deleteUrl = `${URL.DELETE_EVENTO}/${evento.id}`;
         return this.http.delete<Evento>(deleteUrl);
     }
-
-/*   load(): Promise<boolean> {
-
-    // Return a promise so that we know when this operation has completed
-    return new Promise((resolve) => {
-      // Get the notes that were saved into storage
-  this.http.get<Evento[]>(URL.ALL_EVENTI).subscribe(response => console.log(response));
-  this.listEventi().subscribe(result => console.log(result));
-  this.storage.get('events').then((events) => console.log(events));
-  this.listEventi().subscribe(result => {
-
-        // Only set this.notes to the returned value if there were values stored
-        if (result != null){
-          this.events = result;
-        }
-        // this.getAllNote().subscribe(result => this.notes  = result) ;
-        // This allows us to check if the data has been loaded in or not
-        this.loaded = true;
-        resolve(true);
-      });
-    });
-  } */
-// ---------fine metodo
 
 
 

@@ -38,7 +38,7 @@ const routes: Routes = [
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'event-detail/:eventId',
+            path: 'evento/:id',
             loadChildren: () => import('../event-detail/event-detail.module').then(m => m.EventDetailModule)
           }
         ]
@@ -65,7 +65,7 @@ const routes: Routes = [
             loadChildren: () => import('../recensioni-list/recensioni-list.module').then(m => m.RecensioniListModule)
           },
           {
-            path: 'recensioni-detail/:idRec',
+            path: 'recensioni/:id',
             loadChildren: () => import('../recensioni/recensioni.module').then(m => m.RecensioniModule)
           }
         ]

@@ -9,10 +9,10 @@ export const URL = {
     LOGIN: URL_BASE + 'http://localhost:8080/user/loginUser/request',
     LOGOUT: URL_BASE + '/logout',
     GET_USERS: 'http://localhost:8080/user/all',
-    UPDATE_PROFILO: 'http://localhost:8080/user/update',
+    UPDATE_PROFILO: 'http://localhost:8080/user/update',        //+IDUser
     INSERT_USER: 'http://localhost:8080/user/saveUser',
-    GET_DATA_USER: 'http://localhost:8080/user/getData',
-    GET_USER_BYID: 'http://localhost:8080/user',
+    GET_DATA_USER: 'http://localhost:8080/user/getData',        
+    GET_USER_BYID: 'http://localhost:8080/user',                //+IDUser
 
     //Note - Recensione
     ADD_NOTA: URL_BASE + 'http://note/addnota',
@@ -31,10 +31,22 @@ export const URL = {
 
     //News
     ALL_NEWS: 'http://localhost:8080/news/all',
-    ADD_NEWS: 'http://localhost:8080/news/addnota',
-    GET_NEWS_BYUSERID: URL_BASE + '/news/user/',                                //+UserID
+    ADD_NEWS: 'http://localhost:8080/news/addnews',
+    GET_NEWS_BYUSERID: 'http://localhost:8080/news/user',                         //+UserID
     UPDATE_NEWS: 'http://localhost:8080/news/update',                            //+NewsID
-    FIND_NEWS_BYID: 'http://localhost:8080/news'                                  //+NewsID
+    FIND_NEWS_BYID: 'http://localhost:8080/news',                                 //+NewsID
+    DELETE_NEWS: 'http://localhost:8080/news/delete',                           //+NewsID
+
+    //Tipo evento
+    ALL_TIPOEVENTO: 'http://localhost:8080/tipoevento/all',
+
+    //Ordini
+    ALL_ORDINI: 'localhost:8080/ordini/all',
+    FIND_ORDINE_BYID: 'localhost:8080/ordini',                                           //+IDOrd
+    FIND_ORDINI_BYUSER: 'localhost:8080/ordini/user',                                     //+IdUser
+    ADD_ORDINE: 'localhost:8080/ordini/addOrdine',         
+    UPDATE_ORDINE: 'localhost:8080/ordini/update',                                         //+IDOrd                     
+    DELETE_ORDINE: 'localhost:8080/ordini/delete'                                              //+IDOrd
 };
 
 export const X_AUTH = 'X-Auth';

@@ -3,6 +3,29 @@
 
     <ion-menu contentId="main-content">
       <ion-content>
+
+
+          <ion-list lines="none">
+          <ion-list-header>
+            Home
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false">
+            <ion-item button (click)="openHome()" detail="false">
+              <ion-icon slot="start" name="hammer"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+         <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/categorie" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="categorie"></ion-icon>
+              <ion-label>
+                Categorie
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
         <ion-list lines="none">
           <ion-list-header>
             Eventi
@@ -14,10 +37,11 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
-
           </ion-menu-toggle>
         </ion-list>
 
+        
+        <!-- ACOUNT LOGGATO-->
         <ion-list *ngIf="loggedIn" lines="none">
           <ion-list-header>
             Account
@@ -32,6 +56,7 @@
             </ion-item>
           </ion-menu-toggle>
 
+
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/recensioni" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="help"></ion-icon>
@@ -41,6 +66,7 @@
             </ion-item>
           </ion-menu-toggle>
 
+          
           <ion-menu-toggle autoHide="false">
             <ion-item button (click)="logout()" detail="false">
               <ion-icon slot="start" name="log-out"></ion-icon>
@@ -49,13 +75,16 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-
+          
         </ion-list>
 
+      <!--account non loggato -->
         <ion-list *ngIf="!loggedIn" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>
+
+
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/login" routerLinkActive="active" routerDirection="root" detail="false">
@@ -65,15 +94,19 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+          
+
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/recensioni" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="help"></ion-icon>
               <ion-label>
-                Recensioni
+               Recensioni
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+
 
           <ion-menu-toggle autoHide="false">
             <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">
@@ -93,7 +126,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list lines="none">
+        <!-- <ion-list lines="none">
           <ion-list-header>
             Home
           </ion-list-header>
@@ -103,7 +136,17 @@
               <ion-label>Home</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
+
+         <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/categorie" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="categorie"></ion-icon>
+              <ion-label>
+                Categorie
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list> -->
+
       </ion-content>
     </ion-menu>
 

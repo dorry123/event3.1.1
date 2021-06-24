@@ -36,7 +36,16 @@ const routes: Routes = [
   {
       path: 'evento/:id',
       loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
+  },
+  {
+      path: 'cat',
+      loadChildren: () => import('./pages/categorie/categorie.module').then(m => m.CategorieModule)
+  },
+  {
+      path: 'ordini',
+      loadChildren: () => import('./pages/ordini/ordini.module').then(m => m.OrdiniModule)
   }
+
 
 /*   {
     path: 'news',

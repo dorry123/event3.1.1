@@ -71,6 +71,17 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'categorie/all',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../categorie/categorie.module').then(m => m.CategorieModule)
+          }
+
+        ]
+      },
+
+      {
         path: 'map',
         children: [
           {

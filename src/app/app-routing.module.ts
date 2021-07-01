@@ -38,19 +38,19 @@ const routes: Routes = [
       loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
   },
   {
-      path: 'cat',
+      path: 'categorie/all',
       loadChildren: () => import('./pages/categorie/categorie.module').then(m => m.CategorieModule)
   },
   {
       path: 'ordini',
       loadChildren: () => import('./pages/ordini/ordini.module').then(m => m.OrdiniModule)
-  }
+  },
 
 
-/*   {
+   {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
-  } */
+  }
 
 ];
 

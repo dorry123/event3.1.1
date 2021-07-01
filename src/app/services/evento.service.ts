@@ -22,6 +22,12 @@ export class EventoService {
         return this.http.get<Evento>(eventoUrl);
     }
 
+// da provare
+    findEventoByCategoria(idEvento: number): Observable<Evento> {
+         const eventoUrl = `${URL.FIND_EVENTO_BYCATEGORIA}/${idEvento}`;
+        return this.http.get<Evento>(eventoUrl);
+     }
+
     createEvento(evento: Evento) {
         return this.http.post<Evento>(URL.ADD_EVENTO, evento);
     }

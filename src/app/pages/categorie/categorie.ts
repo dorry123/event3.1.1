@@ -12,12 +12,13 @@ import {NavController} from '@ionic/angular';
 })
 
 export class CategoriePage implements OnInit {
-  //cambiare con Categorie
+
   private categorie$: Observable<TipoEvento[]>;
   constructor(private tipoeventoService: TipoeventoService) {}
 
     ngOnInit() {
     this.categorie$ = this.tipoeventoService.listTipoEvento();
+    //console.log(this.categorie$);
   }
 
   doRefresh(event) {

@@ -15,4 +15,5 @@ export class Evento {
     costo:number;
     sconto: number;
     descrizione:string;
+    img: string;
 }

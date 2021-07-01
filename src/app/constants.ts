@@ -26,8 +26,10 @@ export const URL = {
     ALL_EVENTI: 'http://localhost:8080/evento/all',
     ADD_EVENTO: 'http://localhost:8080/evento/add',
     FIND_EVENTO_BYID:  'http://localhost:8080/evento',              //+EventoID verificare
+    FIND_EVENTO_BYCATEGORIA: 'http://localhost:8080/evento/categoria',                                         //+IDCATEGORIA
     UPDATE_EVENTO: 'http://localhost:8080/evento/update',           //+EventoID
     DELETE_EVENTO: 'http://localhost:8080/evento/delete',           //+EventoID verificare
+
 
     //News
     ALL_NEWS: 'http://localhost:8080/news/all',
@@ -38,7 +40,7 @@ export const URL = {
     DELETE_NEWS: 'http://localhost:8080/news/delete',                           //+NewsID
 
     //Tipo evento
-    ALL_TIPOEVENTO: 'http://localhost:8080/tipoevento/all',
+    ALL_TIPOEVENTO: 'http://localhost:8080/categorie/all',
 
     //Ordini
     ALL_ORDINI: 'localhost:8080/ordini/all',
@@ -53,3 +55,5 @@ export const X_AUTH = 'X-Auth';
 export const AUTH_TOKEN = 'auth-token';
 export const UTENTE_STORAGE = 'utente';
 export const LINGUA = 'lingua';
+export const IMG_CATEGORIA = './../../assets/img/categorie/';
+

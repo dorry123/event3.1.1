@@ -48,7 +48,7 @@ export class RecensioniPage implements OnInit {
       this.submitted = false;
 
       const toast = await this.toastCtrl.create({
-        message: 'Your support request has been sent.',
+        message: 'Tuo messaggio è stato inserito',
         duration: 3000
       });
       await toast.present();

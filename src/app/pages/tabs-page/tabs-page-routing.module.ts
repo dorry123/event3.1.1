@@ -108,6 +108,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'recensioni',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../recensioni/recensioni.module').then(m => m.RecensioniModule)
+          }
+        ]
+      },
 
       {
         path: '',

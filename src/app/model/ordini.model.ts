@@ -1,5 +1,5 @@
 
-//import {TipoPag} from './tipopag.model';
+// import {TipoPag} from './tipopag.model';
 
 export class Ordini {
     id: number;

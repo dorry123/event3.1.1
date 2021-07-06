@@ -12,7 +12,8 @@ import { OrdiniPageRoutingModule } from './ordini-routing.module';
     FormsModule,
     IonicModule,
     OrdiniPageRoutingModule
-  ]
+  ],
+  declarations: [OrdiniPage]
 })
 export class OrdiniModule {}
 

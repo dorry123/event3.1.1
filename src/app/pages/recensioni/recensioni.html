@@ -9,21 +9,22 @@
 </ion-header>
 
 <ion-content>
-<!--   <div class="support-logo">
+  <div class="support-logo">
     <img src="assets/img/appicon.svg" alt="Ionic Logo">
-  </div> -->
+  </div> 
 
-<!--   <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+<!-- Inserimento recensione - DA MODIFICARE-->
+   <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
     <ion-list lines="none">
       <ion-item>
-        <ion-label position="stacked" color="primary">Enter your support message below</ion-label>
+        <ion-label position="stacked" color="primary">Inserisci nuova recensione</ion-label>
         <ion-textarea [(ngModel)]="supportMessage" name="supportQuestion" #supportQuestion="ngModel" rows="6" required></ion-textarea>
       </ion-item>
     </ion-list>
 
     <ion-text color="danger">
       <p [hidden]="supportQuestion.valid || submitted === false" class="ion-padding-start">
-        Support message is required
+        Messaggio richiesto - campo vuoto
       </p>
     </ion-text>
 
@@ -31,8 +32,9 @@
       <ion-button expand="block" type="submit">Submit</ion-button>
     </div>
   </form>
-</ion-content> -->
+<!-- FINE Inserimento recensione-->
 
+con modifica
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12" size-md="6" *ngFor="let rec of recensioni$ | async">
@@ -55,9 +57,9 @@
               </ion-label>
             </ion-item> -->
           </ion-card-header>
-
-
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  </ion-content> 

@@ -13,7 +13,7 @@ import {NavController} from '@ionic/angular';
 })
 
 export class OrdiniPage implements OnInit {
-  news: any[] = [];
+  ordini: any[] = [];
   private ordini$: Observable<Ordini[]>;
 
   constructor(private ordiniService: OrdiniService) {}
@@ -28,7 +28,5 @@ export class OrdiniPage implements OnInit {
           event.target.complete();
         }));
   } 
-
-
 
 }

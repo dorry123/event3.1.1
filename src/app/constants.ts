@@ -43,12 +43,12 @@ export const URL = {
     ALL_TIPOEVENTO: 'http://localhost:8080/categorie/all',
 
     //Ordini
-    ALL_ORDINI: 'localhost:8080/ordini/all',
-    FIND_ORDINE_BYID: 'localhost:8080/ordini',                                           //+IDOrd
-    FIND_ORDINI_BYUSER: 'localhost:8080/ordini/user',                                     //+IdUser
-    ADD_ORDINE: 'localhost:8080/ordini/addOrdine',         
-    UPDATE_ORDINE: 'localhost:8080/ordini/update',                                         //+IDOrd                     
-    DELETE_ORDINE: 'localhost:8080/ordini/delete'                                              //+IDOrd
+    ALL_ORDINI: 'http://localhost:8080/ordini/all',
+    FIND_ORDINE_BYID: 'http://localhost:8080/ordini',                                           //+IDOrd
+    FIND_ORDINI_BYUSER: 'http://localhost:8080/ordini/user',                                     //+IdUser
+    ADD_ORDINE: 'http://localhost:8080/ordini/addOrdine',         
+    UPDATE_ORDINE: 'http://localhost:8080/ordini/update',                                         //+IDOrd                     
+    DELETE_ORDINE: 'http://localhost:8080/ordini/delete'                                              //+IDOrd
 };
 
 export const X_AUTH = 'X-Auth';

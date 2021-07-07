@@ -7,9 +7,9 @@ import { Ordini } from '../../model/ordini.model';
 import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'page-event-detail',
-  templateUrl: 'event-detail.html',
-  styleUrls: ['./event-detail.scss'],
+  selector: 'page-ordinit-detail',
+  templateUrl: 'ordini-detail.html',
+  styleUrls: ['./ordini-detail.scss'],
 })
 
 export class OrdiniDetailPage implements OnInit{

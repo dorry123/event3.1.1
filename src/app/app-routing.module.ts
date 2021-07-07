@@ -38,6 +38,10 @@ const routes: Routes = [
       loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
   },
   {
+      path: 'ordini/:id',
+      loadChildren: () => import('./pages/ordini-detail/ordini-detail.module').then(m => m.OrdiniDetailModule)
+  },
+  {
       path: 'categorie',
       loadChildren: () => import('./pages/categorie/categorie.module').then(m => m.CategorieModule)
   },

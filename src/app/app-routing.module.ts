@@ -52,7 +52,12 @@ const routes: Routes = [
   {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then(m => m.NewsModule)
+  },
+    {
+    path: 'registration',
+    loadChildren: () => import('./pages/registration/registration.module').then(m => m.RegistrationModule)
   }
+
 
 ];
 

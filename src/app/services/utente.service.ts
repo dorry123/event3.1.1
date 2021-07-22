@@ -103,13 +103,23 @@ export class UtenteService {
             }).subscribe (response => this.res = JSON.stringify(response), error1 => this.res = JSON.stringify(error1));
             return this.res; }
 
-      registration( mail, pass, nome): any{
+      registration( tipo_utente, societa, piva, nome, cognome, mail, cel_tel, indirizzo, prov, cap, localita, username, pass ): any{
             this.http.post('http://localhost:8080/user/saveUser',
                 {
-            username: nome,
-            password: pass,
-            email : mail,
-            roles: ['Admin', 'Manager']}
+                    tipo_utente: 'utente',   
+                    societa: societa,    
+                    piva: piva, 
+                    nome: nome,
+                    cognome: cognome,
+                    email : mail,
+                    cel_tel: cel_tel,
+                    indirizzo: indirizzo,
+                    prov: prov,
+                    cap: cap,
+                    localita: localita,
+                    username: username,
+                    password: pass
+        }
                 ).subscribe(result => this.res = JSON.stringify(result));
             return console.log(this.res);
             }

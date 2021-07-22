@@ -74,4 +74,8 @@ export class AccountPage implements AfterViewInit {
   support() {
     this.router.navigateByUrl('/support');
   }
+
+    updateProfile() {
+    this.router.navigateByUrl('/profilo');
+  }
 }

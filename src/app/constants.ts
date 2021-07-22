@@ -9,7 +9,7 @@ export const URL = {
     LOGIN: URL_BASE + 'http://localhost:8080/user/loginUser/request',
     LOGOUT: URL_BASE + '/logout',
     GET_USERS: 'http://localhost:8080/user/all',
-    UPDATE_PROFILO: 'http://localhost:8080/user/update',        //+IDUser
+    UPDATE_PROFILO: 'http://localhost:8080/user/updateprofilo',        //+IDUser
     INSERT_USER: 'http://localhost:8080/user/saveUser',
     GET_DATA_USER: 'http://localhost:8080/user/getData',        
     GET_USER_BYID: 'http://localhost:8080/user',                //+IDUser
@@ -54,6 +54,5 @@ export const URL = {
 export const X_AUTH = 'X-Auth';
 export const AUTH_TOKEN = 'auth-token';
 export const UTENTE_STORAGE = 'utente';
-export const LINGUA = 'lingua';
 export const IMG_CATEGORIA = './../../assets/img/categorie/';
 

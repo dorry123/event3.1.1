@@ -19,12 +19,12 @@ export class RegistrationPage implements OnInit {
   constructor(private formBuilder: FormBuilder, public utenteService: UtenteService, private navController: NavController) {
   }
 
-tipo_utente: any;
+tipoutente: any;
 societa: any;
 piva: any;
 nome: any; 
 cognome: any;
-cel_tel: any;
+telefono: any;
 indirizzo: any;
 prov: any;
 cap: any;
@@ -50,8 +50,8 @@ pass: any;
     // tslint:disable-next-line:label-position
     this.utente.email = this.profiloFormModel.value.email;
     this.utente.username = this.profiloFormModel.value.username;
-   const rt = this.utenteService.registration(this.tipo_utente, this.societa, this.piva, this.nome,  this.cognome, this.email,  
-                                              this.cel_tel, this.indirizzo, this.prov, this.cap, this.localita, this.username, 
+   const rt = this.utenteService.registration(this.tipoutente, this.societa, this.piva, this.nome,  this.cognome, this.email,  
+                                              this.telefono, this.indirizzo, this.prov, this.cap, this.localita, this.username, 
                                               this.pass );
 
    return console.log(rt);
